@@ -19,11 +19,6 @@ class CategoryView extends StatelessWidget {
               label: 'Sports',
               tap: () {
                 categorycontroller.togleSelectSports();
-                // if (categorycontroller.select.value == Categories.sports) {
-                //   print('Success');
-                // } else {
-                //   print('error');
-                // }
               },
               clr: categorycontroller.select.value == Categories.sports
                   ? Colors.black

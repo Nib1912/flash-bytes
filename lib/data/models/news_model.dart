@@ -29,7 +29,6 @@ class NewsModel {
   this.content,
   });
 
-  //Source? source;
   String? author;
   String? title;
   String? description;
@@ -40,7 +39,6 @@ class NewsModel {
 
   factory Article.fromJson(Map<String, dynamic> json) =>
   Article(
-  //source: Source.fromJson(json["source"]),
   author: json["author"] == null ? null : json["author"],
   title: json["title"],
   description: json["description"],
@@ -51,10 +49,4 @@ class NewsModel {
   );
   }
 
-//   Map<String, dynamic> toJson() => {
-//     "status": status,
-//     "totalResults": totalResults,
-//     "articles": List<dynamic>.from(articles!.map((x) => x.toJson())),
-//   };
-// }
 
