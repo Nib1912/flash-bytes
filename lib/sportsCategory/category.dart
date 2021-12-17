@@ -1,0 +1,1 @@
+enum Categories{empty,sports,politics,technology,cinema}
