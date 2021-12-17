@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 class APIService {
-  Future<NewsModel?> fetchNews(String str) async {
-    print(str);
+  Future<NewsModel?> fetchNews(String category,String date) async {
+
     final response = await http
-        .get(Uri.parse('https://newsapi.org/v2/top-headlines?category=$str&country=in&from=2021-12-15&language=en&apiKey=0eb804e111d847deb9e335aa09081b5a'));
+        .get(Uri.parse('https://newsapi.org/v2/top-headlines?category=$category&country=in&from=$date&language=en&apiKey=0eb804e111d847deb9e335aa09081b5a'));
 
     if (response.statusCode == 200) {
       print('success');

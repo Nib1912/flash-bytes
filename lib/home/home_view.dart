@@ -10,9 +10,6 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('FlashBytes'),
-        actions: [
-          Icon(Icons.search_outlined),
-        ],
         centerTitle: true,
       ),
       body: Container(

@@ -10,9 +10,11 @@ class NewsController extends GetxController {
   var title = [].obs;
   var isLoading = true.obs;
 
-  Future<NewsModel?> getnews() async {
-    var res = await APIService().fetchNews(controller.str.toString());
+  DateTime now = DateTime.now();
 
+  Future<NewsModel?> getnews() async {
+    var res =
+        await APIService().fetchNews(controller.str.toString(), now.toString());
     totalResults.value = res!.totalResults!;
     for (var i = 0; i < res.articles!.length; i++) {
       urlToImage.insert(i, res.articles![i].urlToImage);
