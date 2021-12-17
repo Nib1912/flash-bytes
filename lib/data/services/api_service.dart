@@ -13,7 +13,6 @@ class APIService {
       print('success');
       print(response.body);
       NewsModel newsModel = NewsModel.fromJson(jsonDecode(response.body));
-      Get.forceAppUpdate();
 
       return newsModel;
     }

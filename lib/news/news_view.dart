@@ -13,7 +13,7 @@ class NewsView extends StatelessWidget {
         () => controller.isLoading == true
             ? Center(child: CircularProgressIndicator())
             : ListView.builder(
-                itemCount: controller.totalResults.toInt(),
+                itemCount: controller.length.toInt(),
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {

@@ -9,6 +9,7 @@ class NewsController extends GetxController {
   var urlToImage = [].obs;
   var title = [].obs;
   var isLoading = true.obs;
+  var length=0.obs;
 
   DateTime now = DateTime.now();
 
@@ -16,9 +17,11 @@ class NewsController extends GetxController {
     var res =
         await APIService().fetchNews(controller.str.toString(), now.toString());
     totalResults.value = res!.totalResults!;
+    length.value=res.articles!.length;
     for (var i = 0; i < res.articles!.length; i++) {
       urlToImage.insert(i, res.articles![i].urlToImage);
       title.insert(i, res.articles![i].title);
+
     }
     isLoading.value = false;
     Get.forceAppUpdate();
@@ -29,6 +32,15 @@ class NewsController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     getnews();
-    Get.forceAppUpdate();
+  }
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 }
